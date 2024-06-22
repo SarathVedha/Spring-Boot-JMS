@@ -51,7 +51,7 @@ public class AppConfiguration {
     MessageConverter messageConverter() {
 
         MappingJackson2MessageConverter messageConverter = new MappingJackson2MessageConverter();
-//        messageConverter.setTargetType(MessageType.TEXT);
+        messageConverter.setTargetType(MessageType.TEXT);
         messageConverter.setTypeIdPropertyName("_type");
 
         return messageConverter;
