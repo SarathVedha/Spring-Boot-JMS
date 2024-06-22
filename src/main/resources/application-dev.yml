@@ -1,0 +1,63 @@
+server:
+  port: 8080
+
+spring:
+  artemis:
+    broker-url: tcp://localhost:61616
+    user: artemis
+    password: artemis
+    mode: native
+    embedded:
+      enabled: false
+
+queue:
+  activemq:
+    string: demo.sample.queue
+    dto: demo.sample.queue.dto
+
+topic:
+  activemq:
+    string: demo.sample.topic
+    dto: demo.sample.topic.dto
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
+    filter: true
+    operations-sorter: alpha
+    tags-sorter: alpha
+    groups-order: asc
+    layout: BaseLayout # DefaultLayout, StackedLayout, DocExpansion, ListLayout, DeepLinking, DisplayOperationId, DefaultModelsExpandDepth, DefaultModelExpandDepth, DefaultModelRendering, DisplayRequestDuration, DocExpansion, Filter, MaxDisplayedTags, OperationsSorter, ShowExtensions, TagsSorter, UrisSorter
+    display-request-duration: true
+#  show-actuator: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+    env:
+      show-values: always
+    configprops:
+      show-values: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  info:
+    env:
+      enabled: true
+    os:
+      enabled: true
+    java:
+      enabled: true
+    build:
+      enabled: true
+
+logging:
+  level:
+    org:
+      apache:
+        activemq:
+          artemis: DEBUG

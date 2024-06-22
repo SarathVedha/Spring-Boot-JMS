@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: Spring-Boot-JMS-ActiveMQ
+  profiles:
+    active: dev
