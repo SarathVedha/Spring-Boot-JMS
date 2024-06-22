@@ -33,6 +33,11 @@ public class MessageSender {
         jmsTemplate.convertAndSend(stringQueueName, message);
     }
 
+    /*
+        * The DTO object is sent as a JSON string to the ActiveMQ queue.
+        * The DTO object is serialized to a JSON string using the Jackson library.
+        * In ActiveMQ console, Send a message need to add header as: _type=com.vedha.dto.SampleDTO to send a DTO object.
+     */
     public void sendDTOMessage(SampleDTO dto) {
 
         log.warn("Sending DTO message: {}", dto);
